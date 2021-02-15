@@ -1,0 +1,5 @@
+.tabs {}
+.tabs_title {display:flex;}
+.title_item {display:flex; justify-content:center; align-items:center; flex:1; padding:5px 0;}
+.active {color:var(--themeColor); border-bottom:solid 5px currentColor;}
+.tabs_content {}

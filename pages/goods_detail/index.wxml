@@ -1,0 +1,38 @@
+<!--pages/goods_detail/index.wxml-->
+<view class="page_goods_detail">
+	<swiper autoplay circular indicator-dots>
+		<swiper-item wx:for="{{goodsInfo.imgs}}" wx:key="img_id" bindtap="onTapSwiperItem" data-url="{{item.goods_middle_img}}">
+			<image mode="widthFix" src="{{item.goods_middle_img}}"></image>
+		</swiper-item>
+	</swiper>
+	<view class="goods_price">￥{{goodsInfo.goods_price}}</view>
+	<view class="goods_title_row">
+		<view class="goods_title">{{goodsInfo.goods_title}}</view>
+		<view class="goods_favorite" bindtap="onTapFavoriteGoods">
+			<text class="icon {{isAtFavorites ? 'img-star-active' : 'img-star'}}"></text>
+			<view class="favorite_text">{{isAtFavorites ? '取消收藏' : '收藏'}}</view>
+		</view>
+	</view>
+	<view class="goods_introduce">
+		<view class="introduce_title">图文详情</view>
+		<view class="introduce_content">
+			<rich-text nodes="{{goodsInfo.goods_introduce}}"></rich-text>
+		</view>
+	</view>
+	<view class="bottom_bar">
+		<view class="bar_item">
+			<view class="icon img-headset"></view>
+			<view>客服</view>
+		</view>
+		<view class="bar_item">
+			<view class="icon img-share-social"></view>
+			<view>分享</view>
+		</view>
+		<navigator open-type="switchTab" url="/pages/cart/index" class="bar_item">
+			<view class="icon img-cart"></view>
+			<view>购物车</view>
+		</navigator>
+		<view class="bar_item btn_cart" bindtap="onTapAddToCart">加入购物车</view>
+		<view class="bar_item btn_buy">立即购买</view>
+	</view>
+</view>

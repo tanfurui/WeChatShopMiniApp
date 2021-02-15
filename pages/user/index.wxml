@@ -1,0 +1,71 @@
+<!--pages/user/index.wxml-->
+<view class="user_info_wrap">
+	<view wx:if="{{userInfo.avatarUrl}}" class="user_img_wrap">
+		<image class="user_bg" src="{{userInfo.avatarUrl}}"></image>
+		<view class="user_info">
+			<image class="user_icon" src="{{userInfo.avatarUrl}}"></image>
+			<view class="user_name">{{userInfo.nickName}}</view>
+		</view>
+	</view>
+	<view wx:else class="user_btn">
+		<navigator url="/pages/login/index">登录</navigator>
+	</view>
+</view>
+<view class="menu_content">
+	<view class="main">
+		<!-- 历史足迹 -->
+		<view class="history_wrap">
+			<navigator class="navi">
+				<view class="his_num">0</view>
+				<view class="his_name">收藏的店铺</view>
+			</navigator>
+			<navigator class="navi" url="/pages/favorites/index">
+				<view class="his_num">{{favoritesNum}}</view>
+				<view class="his_name">收藏的商品</view>
+			</navigator>
+			<navigator class="navi">
+				<view class="his_num">0</view>
+				<view class="his_name">关注的商品</view>
+			</navigator>
+			<navigator class="navi">
+				<view class="his_num">0</view>
+				<view class="his_name">我的足迹</view>
+			</navigator>
+		</view>
+		<!-- 我的订单 -->
+		<view class="order_wrap">
+			<view class="title">我的订单</view>
+			<view class="order_content">
+				<navigator class="navi" url="/pages/order/index?type=0">
+					<view class="icon img-reader"></view>
+					<view class="order_name">全部订单</view>
+				</navigator>
+				<navigator class="navi" url="/pages/order/index?type=1">
+					<view class="icon img-card"></view>
+					<view class="order_name">待付款</view>
+				</navigator>
+				<navigator class="navi" url="/pages/order/index?type=2">
+					<view class="icon img-earth"></view>
+					<view class="order_name">待收货</view>
+				</navigator>
+				<navigator class="navi" url="/pages/order/index?type=3">
+					<view class="icon img-wallet"></view>
+					<view class="order_name">退款/退货</view>
+				</navigator>
+			</view>
+		</view>
+		<!-- 收货地址管理 -->
+		<view class="address_wrap">收货地址管理</view>
+		<!-- 应用相关 -->
+		<view class="app_wrap">
+			<view class="info_item app_contact">
+				<text>联系客服</text>
+				<text>400-618-4000</text>
+			</view>
+			<navigator class="info_item" url="/pages/feedback/index">意见反馈</navigator>
+			<view class="info_item">关于我们</view>
+		</view>
+		<!-- 推荐 -->
+		<view class="recommend_wrap">把小程序推荐给其他人</view>
+	</view>
+</view>

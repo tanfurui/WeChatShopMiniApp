@@ -1,0 +1,17 @@
+/* pages/category/index.wxss */
+page {
+	height:100%;
+}
+
+.page_categorys {height:100%; display:flex; flex-direction:column;}
+.page_categorys .cates_container {display:flex; flex:1; overflow-y:hidden;}
+.page_categorys .cates_container .left_menu {height:100%; flex:2;}
+.page_categorys .cates_container .left_menu .menu_item {height:40px; display:flex; justify-content:center; align-items:center;}
+.page_categorys .cates_container .left_menu .active {color:var(--themeColor); border-left:solid 5px currentColor;}
+.page_categorys .cates_container .right_content {height:100%; flex:5;}
+.page_categorys .cates_container .right_content .goods_group {}
+.page_categorys .cates_container .right_content .goods_group .goods_title {height:40px; display:flex; justify-content:center; align-items:center;}
+.page_categorys .cates_container .right_content .goods_group .goods_title .delimiter {color:#CCC; padding:0 10px;}
+.page_categorys .cates_container .right_content .goods_group .goods_list {display:flex; flex-wrap:wrap;}
+.page_categorys .cates_container .right_content .goods_group .goods_list .navi {width:33.33%; text-align:center;}
+.page_categorys .cates_container .right_content .goods_group .goods_list .navi image {width:50%;}

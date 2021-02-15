@@ -1,0 +1,22 @@
+<!--pages/feedback/index.wxml-->
+<Tabs tabs="{{tabs}}" bindChangeTabsItem="onChangeTabsItem">
+	<view class="feedback_main">
+		<view class="title">问题的种类</view>
+		<view class="tips">
+			<text>功能建议</text>
+			<text>购买遇到问题</text>
+			<text>性能问题</text>
+			<text>其他</text>
+		</view>
+		<view class="content">
+			<textarea value="{{feedbackText}}" bindinput="onInputFeedback" placeholder="请描述一下您的问题"></textarea>
+			<view class="tool">
+				<button bindtap="onTapChooseImg">+</button>
+				<view class="upload_img_item" bindtap="onTapRemoveImg" data-index="{{index}}" wx:for="{{chooseImgsPath}}" wx:key="*this"><UploadImg src="{{item}}"></UploadImg></view>
+			</view>
+		</view>
+		<view class="form_btn_wrap">
+			<button type="warn" bindtap="onTapSubmit">提交</button>
+		</view>
+	</view>
+</Tabs>

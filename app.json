@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/search/index",
+    "pages/category/index",
+    "pages/goods_list/index",
+    "pages/goods_detail/index",
+    "pages/cart/index",
+    "pages/pay/index",
+    "pages/order/index",
+    "pages/favorites/index",
+    "pages/feedback/index",
+    "pages/auth/index",
+    "pages/login/index",
+    "pages/user/index"
+  ],
+  "window":{
+    "navigationBarTitleText": "锐优购",
+    "navigationBarTextStyle":"white",
+		"navigationBarBackgroundColor": "#F44336",
+    "enablePullDownRefresh":true,
+		"backgroundTextStyle":"dark"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#000",
+    "list": [
+      {"pagePath": "pages/index/index", "text": "首页", "iconPath": "assets/icons/home.png", "selectedIconPath": "assets/icons/home_.png"},
+      {"pagePath": "pages/category/index", "text": "分类", "iconPath": "assets/icons/squares.png", "selectedIconPath": "assets/icons/squares_.png"},
+      {"pagePath": "pages/cart/index", "text": "购物车", "iconPath": "assets/icons/shoppingcart.png", "selectedIconPath": "assets/icons/shoppingcart_.png"},
+      {"pagePath": "pages/user/index", "text": "我的", "iconPath": "assets/icons/customer.png", "selectedIconPath": "assets/icons/customer_.png"}
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

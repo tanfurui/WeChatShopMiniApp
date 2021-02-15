@@ -1,0 +1,14 @@
+/* pages/feedback/index.wxss */
+page {background-color:#EDEDED;}
+
+.feedback_main {padding:10px;}
+.feedback_main .tips {display:flex; flex-wrap:wrap;}
+.feedback_main .tips text {width:30%; padding:5px; text-align:center; background-color:#FFF; margin:5px;}
+
+.feedback_main .content {background-color:#FFF; margin-top:10px;}
+.feedback_main .content textarea {padding:5px;}
+.feedback_main .content .tool {display:flex; flex-wrap:wrap; padding-bottom:5px;}
+.feedback_main .content .tool button {margin:10px 0 0 5px; width:48px; height:48px; font-size:30px; padding:0; display:flex; justify-content:center; align-items:center; color:#CCC;}
+.feedback_main .content .tool .upload_img_item {margin:10px 0 0 10px;}
+.feedback_main .form_btn_wrap {margin-top:10px; display:flex; justify-content:flex-end;}
+.feedback_main .form_btn_wrap button {margin:0; width:30%;}

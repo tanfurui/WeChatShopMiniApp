@@ -1,0 +1,29 @@
+/* pages/cart/index.wxss */
+page {padding-bottom:var(--bottomBarHeight);}
+/* 收货地址样式 */
+.revice_address_row .address_btn {padding:20px;}
+.revice_address_row .address_btn button {width:60%;}
+
+/* 购物车样式 */
+.cart_content .cart_title {padding:10px; font-size:18px; color:var(--themeColor); border-top:solid 1px currentColor; border-bottom:solid 1px currentColor;}
+/* 购物车商品项样式 */
+.cart_content .cart_main .cart_item {display:flex; padding:10px; border-bottom:solid 1px #CCC;}
+.cart_content .cart_main .cart_item .item_cb_wrap {flex:1; display:flex; justify-content:center; align-items:center;}
+.cart_content .cart_main .cart_item .item_img_wrap {flex:2; display:flex; justify-content:center; align-items:center;}
+.cart_content .cart_main .cart_item .item_img_wrap image {width:80%;}
+.cart_content .cart_main .cart_item .item_info_wrap {flex:4; display:flex; flex-direction:column; justify-content:space-around;}
+.cart_content .cart_main .cart_item .item_info_wrap .goods_title {display:-webkit-box; overflow:hidden; -webkit-box-orient:vertical; -webkit-line-clamp:2; color:#666;}
+.cart_content .cart_main .cart_item .item_info_wrap .goods_price_wrap {display:flex; justify-content:space-between;}
+.cart_content .cart_main .cart_item .item_info_wrap .goods_price_wrap .goods_price {color:var(--themeColor);}
+/* 购物车商品项数量小工具样式 */
+.cart_content .cart_main .cart_item .item_info_wrap .goods_price_wrap .goods_num_tool {display:flex;}
+.cart_content .cart_main .cart_item .item_info_wrap .goods_price_wrap .goods_num_tool .num_edit,
+.cart_content .cart_main .cart_item .item_info_wrap .goods_price_wrap .goods_num_tool .goods_num {width:26px; height:26px; display:flex; justify-content:center; align-items:center;}
+.cart_content .cart_main .cart_item .item_info_wrap .goods_price_wrap .goods_num_tool .num_edit {border:solid 1px #CCC;}
+.cart_content .emptyTips {text-align:center; margin-top:20px;}
+/* 底部统计栏样式 */
+.footer_tool {position:fixed; left:0; bottom:0; width:100%; height:var(--bottomBarHeight); background-color:#FFF; display:flex; border-top:solid 1px #CCC;}
+.footer_tool .check_all_wrap {flex:2; display:flex; justify-content:center; align-items:center;}
+.footer_tool .total_price_wrap {flex:5; padding-right:5px; text-align:right;}
+.footer_tool .total_price_wrap .total_price .total_price_text {color:var(--themeColor); font-size:18px;}
+.footer_tool .order_pay_wrap {flex:3; background-color:var(--themeColor); color:#FFF; font-size:18px; font-weight:bold; display:flex; justify-content:center; align-items:center;}

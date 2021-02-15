@@ -1,0 +1,53 @@
+<!--index.wxml-->
+<view class="page_index">
+	<!-- 搜索框 开始 -->
+	<SearchInput></SearchInput>
+	<!-- 搜索框 结束 -->
+	<!-- 轮播图 开始 -->
+	<view class="index_swiper">
+		<!-- interval轮播图切换时间间隔 circular循环轮播 -->
+		<swiper autoplay interval="3000" circular indicator-dots indicator-color="#ccc" indicator-active-color="#F44336">
+			<swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+				<navigator>
+					<image mode="widthFix" class="" src="{{item.image_src}}" />
+				</navigator>
+			</swiper-item>
+		</swiper>
+	</view>
+	<!-- 轮播图 结束 -->
+	<!-- 分类导航 开始 -->
+	<view class="index_cate">
+		<navigator class="navi" wx:for="{{cateList}}" wx:key="name">
+			<image mode="widthFix" src="{{item.image_src}}"></image>
+			<text>{{item.name}}</text>
+		</navigator>
+	</view>
+	<!-- 分类导航 结束 -->
+	<!-- 楼层 开始 -->
+	<view class="index_floor">
+		<view class="floor_group" wx:for="{{floorList}}" wx:for-item="mainItem" wx:for-index="mainIndex" wx:key="name">
+			<!-- 标题 -->
+			<view class="floor_title">{{mainItem.floor_title.name}}
+				<!-- <image mode="widthFix" src="{{mainItem.floor_title.image_src}}"></image> -->
+			</view>
+			<!-- 内容 -->
+			<view class="floor_list">
+				<view class="left">
+					<block wx:for="{{mainItem.product_list}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="name">
+						<navigator wx:if="{{subIndex === 0}}" class="navi">
+							<image src="{{subItem.image_src}}"></image>
+						</navigator>
+					</block>
+				</view>
+				<view class="right">
+					<block wx:for="{{mainItem.product_list}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="name">
+						<navigator wx:if="{{subIndex !== 0}}" class="navi">
+							<image src="{{subItem.image_src}}"></image>
+						</navigator>
+					</block>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 楼层 结束 -->
+</view>

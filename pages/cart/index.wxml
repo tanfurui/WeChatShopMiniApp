@@ -1,0 +1,61 @@
+<!--pages/cart/index.wxml-->
+<!-- 收货地址 -->
+<view class="revice_address_row">
+	<view class="address_btn" wx:if="{{!address.userName}}">
+		<button type="primary" plain bindtap="onTapChooseAddress">获取收货地址</button>
+	</view>
+	<view wx:else class="user_address_info">收货人：{{address.userName}}，收货地址：{{address.fullAddress}}，手机号码：{{address.telNumber}}</view>
+</view>
+<!-- 购物车内容 -->
+<view class="cart_content">
+	<view class="cart_title">购物车</view>
+	<view class="cart_main">
+		<block wx:if="{{cart.length > 0}}">
+			<view class="cart_item" wx:for="{{cart}}" wx:key="goods_id">
+				<!-- 复选框 -->
+				<view class="item_cb_wrap">
+					<checkbox-group data-id="{{item.goods_id}}" bindchange="onChangeSelectItem">
+						<checkbox checked="{{item.is_cart_selected}}"></checkbox>
+					</checkbox-group>
+				</view>
+				<!-- 商品图片 -->
+				<navigator class="item_img_wrap">
+					<image mode="widthFix" src="{{item.goods_small_img}}"></image>
+				</navigator>
+				<!-- 商品信息 -->
+				<view class="item_info_wrap">
+					<view class="goods_title">{{item.goods_title}}</view>
+					<view class="goods_price_wrap">
+						<view class="goods_price">￥{{item.goods_price}}</view>
+						<view class="goods_num_tool">
+							<view class="num_edit" data-id="{{item.goods_id}}" data-opera="{{-1}}" bindtap="onTapItemNumEdit">-</view>
+							<view class="goods_num">{{item.in_cart_number}}</view>
+							<view class="num_edit" data-id="{{item.goods_id}}" data-opera="{{1}}" bindtap="onTapItemNumEdit">+</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block wx:else>
+			<view class="emptyTips">您的购物车空空如也哦~</view>
+		</block>
+	</view>
+</view>
+<!-- 底部统计栏 -->
+<view class="footer_tool">
+	<!-- 全选 -->
+	<view class="check_all_wrap">
+		<checkbox-group bindchange="onChangeSelectAll">
+			<checkbox checked="{{isAllSelected}}">全选</checkbox>
+		</checkbox-group>
+	</view>
+	<!-- 总价 -->
+	<view class="total_price_wrap">
+		<view class="total_price">
+			合计：<text class="total_price_text">￥{{totalPrice}}</text>
+		</view>
+		<view>包含运费</view>
+	</view>
+	<!-- 结算 -->
+	<view class="order_pay_wrap" bindtap="onTapPay">结算({{totalSelectedGoodsNum}})</view>
+</view>

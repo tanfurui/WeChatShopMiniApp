@@ -1,0 +1,11 @@
+/* 微信小程序的样式文件不支持星号通配符 */
+/* @import './assets/iconfont.wxss'; */
+@import './assets/styles/Ionicons.wxss';
+
+page, view, text, swiper, swiper-item, image, navigator {margin:0; padding:0; box-sizing:border-box;}
+page {--themeColor:#F44336; --bottomBarHeight:48px; font-size:14px;}
+
+.flexrow {display:flex; flex-direction:row;}
+.flexcol {display:flex; flex-direction:column;}
+
+image {width:100%;}

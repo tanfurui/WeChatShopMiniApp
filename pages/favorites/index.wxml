@@ -1,0 +1,20 @@
+<!--pages/favorites/index.wxml-->
+<view>
+	<Tabs tabs="{{tabs}}" bindChangeTabsItem="onChangeTabsItem">
+		<view class="main">
+			<view class="content">
+				<navigator class="goods_item" wx:for="{{favorites}}" wx:key="goods_id" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+					<!-- 左侧 商品图片 -->
+					<view class="goods_img_wrap">
+						<image mode="widthFix" src="{{item.goods_small_img}}"></image>
+					</view>
+					<!-- 右侧 商品文字 -->
+					<view class="goods_info_wrap">
+						<view class="goods_title">{{item.goods_title}}</view>
+						<view class="goods_price">￥{{item.goods_price}}</view>
+					</view>
+				</navigator>
+			</view>
+		</view>
+	</Tabs>
+</view>

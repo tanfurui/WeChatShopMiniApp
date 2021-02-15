@@ -1,0 +1,8 @@
+/* pages/search/index.wxss */
+page {background-color:#EDEDED; padding:10px;}
+.search_row {height:30px; display:flex;}
+.search_row input {background-color:#FFF; flex:1; height:100%; padding-left:5px;}
+.search_row button {width:55px; height:100%; padding:0; margin:0 5px; display:flex; justify-content:center; align-items:center; font-size:12px;}
+
+.search_content {margin-top:10px;}
+.search_content .search_item {background-color:#FFF; padding:10px 5px; border-bottom:solid 1px #CCC; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
