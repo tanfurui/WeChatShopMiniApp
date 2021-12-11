@@ -1,12 +1,17 @@
-// 当前请求数量
 let ajaxTimes = 0;
-export const request = params => {
-  ajaxTimes++;
-  // 显示Loading
-  wx.showLoading({title:'正在加载', mask:true});
+export const request = config => {
+  // 全局统一处理请求的URL前缀
+  // config.url = `${api.base}${config.url}`;
+  if (config.params) {
+    config.data = config.params;
+  }
+  if (config.loading) {
+    ajaxTimes++;
+    wx.showLoading({title:'正在加载', mask:true});
+  }
   return new Promise((resolve, reject) => {
     wx.request({
-      ...params,
+      ...config,
       success:result => {
         resolve(result);
       },
