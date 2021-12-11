@@ -1,3 +1,4 @@
+// 当前请求数量
 let ajaxTimes = 0;
 export const request = params => {
   ajaxTimes++;
