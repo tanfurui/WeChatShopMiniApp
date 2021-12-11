@@ -14,7 +14,7 @@ export const request = params => {
         reject(err);
       },
       complete() {
-        // 每请求完成一次，就对当前请求数量进行自减，当请求数量为0时隐藏Loading
+        // 每请求完成一次，就对当前请求数量进行自减，当请求数量为0时则隐藏Loading
         ajaxTimes--;
         if (ajaxTimes === 0) {
           // 隐藏Loading
